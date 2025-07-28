@@ -22,9 +22,9 @@ public class brokenlink {
 
 			         
 
-			         //broken URL
+			      
 
-			         //Step 1 - IS to get all urls tied up to the links using Selenium
+			        
 
 			         //  Java methods will call URL's and gets you the status code
 
