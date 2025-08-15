@@ -2,41 +2,50 @@ package PageObjectModel;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class loginpage {
+public class loginpage2 {
 
 	WebDriver driver;
 
 	// constructor
-	loginpage(WebDriver driver) {
+	loginpage2(WebDriver driver) {
 
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
 	}
 
-	// locators
-	By txt_username_loc = By.xpath("//input[@placeholder='Username']");
-	By txt_password_loc = By.xpath("//input[@placeholder='Password']");
-	By btn_login_loc = By.xpath("//button[normalize-space()='Login']");
+	// Locators
+	
+
+	@FindBy(xpath = "//input[@placeholder='Username']")
+	WebElement txt_username;
+
+	@FindBy(xpath = "//input[@placeholder='Password']")
+	WebElement txt_password;
+
+	@FindBy(xpath = "//button[normalize-space()='Login']")
+	WebElement btn_login;
+
+	@FindBy(tagName = "a")
+	List<WebElement> links;
 
 	// Action methods
 
 	public void setUserName(String user) {
-		driver.findElement(txt_username_loc).sendKeys(user);
+		txt_username.sendKeys(user);
 	}
 
 	public void setpassword(String pwd) {
-		driver.findElement(txt_password_loc).sendKeys(pwd);
+		txt_password.sendKeys(pwd);
 	}
 
 	public void clicklogin() {
-		driver.findElement(btn_login_loc).click();
+		btn_login.click();
 	}
 
 }

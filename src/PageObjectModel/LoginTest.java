@@ -1,5 +1,6 @@
 package PageObjectModel;
 
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -15,13 +16,15 @@ public class LoginTest {
 	void setup() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
 	}
 
+
 	@Test
 	void testLogin() {
-		loginpage lp = new loginpage(driver);
+		loginpage2 lp = new loginpage2(driver);
 		lp.setUserName("admin");
 		lp.setpassword("admin123");
 		lp.clicklogin();
@@ -34,4 +37,4 @@ public class LoginTest {
 	void tearDown() {
 		driver.quit();
 	}
-}
+}//Hii

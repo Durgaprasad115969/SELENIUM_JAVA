@@ -27,8 +27,7 @@ public class LoginPage {
 		driver.switchTo().window(parentId);
 		driver.findElement(By.id("username")).sendKeys(emailId);
 		
-		
-		
+	
 		
 	}
 
